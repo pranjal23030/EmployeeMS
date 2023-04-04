@@ -22,22 +22,20 @@
                 <tbody>
                 @if($data)
                     @foreach($data as $d)
-                <tr>
-                    <td>{{$d->id}}</td>
-                    @if(isset($d->department))
-                        <td>{{$d->department->Name}}</td>
-                    @else
-                        <td></td>
-                    @endif
-                    <td>{{$d->name}}</td>
-                    <td><img src="{{asset('images/'.$d->photo)}}" width="80"></td>
-                    <td>{{$d->address}}</td>
-                    <td>
-                        <a href="{{url('employee/'.$d->id)}}" class="btn btn-warning btn-sm ">Read</a>
-                        <a href="{{url('employee/'.$d->id.'/edit')}}" class="btn btn-info btn-sm">Update</a>
-                        <a onclick="return confirm('Do you really wanna delete this data??')" href="{{url('employee/'.$d->id.'/delete')}}" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-                </tr>
+                        @if(isset($d->department) && $d->department->Name != '')
+                            <tr>
+                                <td>{{$d->id}}</td>
+                                <td>{{$d->department->Name}}</td>
+                                <td>{{$d->name}}</td>
+                                <td><img src="{{asset('images/'.$d->photo)}}" width="80"></td>
+                                <td>{{$d->address}}</td>
+                                <td>
+                                    <a href="{{url('employee/'.$d->id)}}" class="btn btn-warning btn-sm ">Read</a>
+                                    <a href="{{url('employee/'.$d->id.'/edit')}}" class="btn btn-info btn-sm">Update</a>
+                                    <a onclick="return confirm('Do you really wanna delete this data??')" href="{{url('employee/'.$d->id.'/delete')}}" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        @endif
                     @endforeach
                 @endif
                 </tbody>
