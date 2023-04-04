@@ -16,13 +16,6 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Action</th>
-                </tr>
-                </tfoot>
                 <tbody>
                 @if($data)
                     @foreach($data as $d)
@@ -30,9 +23,10 @@
                     <td>{{$d->id}}</td>
                     <td>{{$d->Name}}</td>
                     <td>
-                        <a href="{{url('department/'.$d->id)}}" class="btn btn-warning btn-sm ">Read</a>
+                        <a href="{{url('department/'.$d->id)}}" class="btn btn-warning btn-sm ">View Employees</a>
                         <a href="{{url('department/'.$d->id.'/edit')}}" class="btn btn-info btn-sm">Update</a>
                         <a onclick="return confirm('Do you really wanna delete this data??')" href="{{url('department/'.$d->id.'/delete')}}" class="btn btn-danger btn-sm">Delete</a>
+{{--                        <a href="{{url('department/'.$d->id)}}" class="btn btn-warning btn-sm ">View</a>--}}
                     </td>
                 </tr>
                     @endforeach

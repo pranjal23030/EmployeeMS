@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
+use http\Exception\BadMessageException;
 use Illuminate\Http\Request;
 use App\Models\Department;
 
@@ -56,8 +58,8 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        $data = Department::find($id);
-        return view('department.show',['data'=>$data]);
+        $data = Employee::where('department_id',$id)->get();
+        return view('department.show' , ['data'=>$data]);
     }
 
     /**

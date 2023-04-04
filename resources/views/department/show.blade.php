@@ -8,17 +8,26 @@
             <a href="{{url('department')}}" class="float-end btn btn-sm btn-success">View</a>
         </div>
         <div class="card-body">
+
                 <table class="table table-bordered">
+                    <thead>
                     <tr>
                         <th>Name</th>
-                        <td>
-                            {{$data->Name}}
-                        </td>
+                        <th>Address</th>
+                        <th>Image</th>
                     </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $d)
+                            <tr>
+                                <td>{{$d->name}}</td>
+                                <td>{{$d->address}}</td>
+                                <td><img src="{{asset('images/'.$d->photo)}}" width="80"></td>
+                            </tr>
+                        @endforeach
                 </table>
         </div>
     </div>
-
 @endsection
 
 

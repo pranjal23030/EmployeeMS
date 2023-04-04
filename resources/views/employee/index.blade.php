@@ -19,24 +19,18 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Department</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                </tr>
-                </tfoot>
                 <tbody>
                 @if($data)
                     @foreach($data as $d)
                 <tr>
                     <td>{{$d->id}}</td>
-                    <td>{{$d->department->Name}}</td>
+                    @if(isset($d->department))
+                        <td>{{$d->department->Name}}</td>
+                    @else
+                        <td></td>
+                    @endif
                     <td>{{$d->name}}</td>
-                    <td><img src="{{asset('public/images/'.$d->photo)}}" width="80"></td>
+                    <td><img src="{{asset('images/'.$d->photo)}}" width="80"></td>
                     <td>{{$d->address}}</td>
                     <td>
                         <a href="{{url('employee/'.$d->id)}}" class="btn btn-warning btn-sm ">Read</a>

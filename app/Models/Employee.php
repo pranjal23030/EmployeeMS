@@ -9,7 +9,9 @@ class Employee extends Model
 {
     use HasFactory;
 
-    function department(){
+    function department(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Department::class);
     }
 }
+

@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="{{asset('public')}}/css/styles.css" rel="stylesheet" />
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
@@ -77,7 +77,9 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy;Pranjal Khatiwada</div>
+                        <div class="footer-copyright text-center py-3">©Copyright:
+                            <a href="https://github.com/pranjal23030">Pranjal Khatiwada</a>
+                        </div>
                 </div>
             </div>
         </footer>

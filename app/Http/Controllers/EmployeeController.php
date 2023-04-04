@@ -27,6 +27,7 @@ class EmployeeController extends Controller
     public function create()
     {
         $data = Department::orderBy('id','asc')->get();
+
         return view('employee.create',['departments'=>$data]);
     }
 
